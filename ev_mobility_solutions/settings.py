@@ -1,4 +1,5 @@
 from django.contrib.messages import constants as messages
+from decouple import config
 """
 Django settings for ev_mobility_solutions project.
 
@@ -21,12 +22,12 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'y&f8$utm=6frmfba8fxbcv2*u$%3l0gl6tr7-01$ub&6vf%uf2'
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://hackathon2023.azurewebsites.net']
 
 
 # Application definition
