@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="header-large-title">
+    <i>My Points</i>
+    <h1 class="title">2,000 points</h1>
+</div>
+
+<div class="section mt-3 mb-3">
+    <div class="card">
+        <img src="{% static 'assets/img/sample/photo/bottle.jpg' %}" class="" alt="image">
+        <div class="card-body">
+            <h6 class="card-subtitle">Offre</h6>
+            <h5 class="card-title">400 Points</h5>
+            <p class="card-text">
+                Obtenez un rabais de 20% sur votre prochain achat.
+            </p>
+            <a href="#" class="btn btn-primary">
+                <ion-icon name="cart-outline"></ion-icon>
+                Redeem
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="section mt-3 mb-3">
+    <div class="card">
+        <img src="{% static 'assets/img/sample/photo/umbrella.jpg' %}" class="card-img-top" alt="image">
+        <div class="card-body">
+            <h6 class="card-subtitle">Offre</h6>
+            <h5 class="card-title">300 Points</h5>
+            <p class="card-text">
+                Obtenez un rabais de 20% sur votre prochain achat.
+            </p>
+            <a href="app-pages.html" class="btn btn-primary">
+                <ion-icon name="cart-outline"></ion-icon>
+                Redeem
+            </a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

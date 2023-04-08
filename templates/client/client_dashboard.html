@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="header-large-title">
+    <h1 class="title">Hello, Sarah</h1>
+</div>
+
+<div class="section mt-3 mb-3">
+    <div class="card">
+        <img src="{% static 'assets/img/sample/photo/orientation-smartphone_23-2147501974.png' %}" class="" alt="image">
+        <div class="card-body">
+            <h6 class="card-subtitle">Discover</h6>
+            <h5 class="card-title">Trouver une borne de recharge</h5>
+            <p class="card-text">
+                Reusable components designed for the mobile interface and ready to use.
+            </p>
+            <a href="google-map.html" class="btn btn-primary">
+                <ion-icon name="Map"></ion-icon>
+                Map
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="section mt-3 mb-3">
+    <div class="card">
+        <img src="{% static 'assets/img/sample/photo/mauvais-concept-revision-illustre_23-2148973701.webp' %}" class="card-img-top" alt="image">
+        <div class="card-body">
+            <h6 class="card-subtitle">Discover</h6>
+            <h5 class="card-title">Note d'avis</h5>
+            <p class="card-text">
+                Pour garantir la confiance et la transparence,laisser des avis sur la qualité et la convivialité des bornes de recharge de TotalEnergies.
+            </p>
+            <a href="app-pages.html" class="btn btn-primary">
+                <ion-icon name="star"></ion-icon>
+                Evaluer
+            </a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

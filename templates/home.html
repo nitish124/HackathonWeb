@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="header-large-title">
+    <h1 class="title">Découverte</h1>
+    <h4 class="subtitle">Bienvenue Chez TotalEnergies</h4>
+</div>
+
+<div class="section full mt-3 mb-3">
+
+    <!-- carousel multiple -->
+    <div class="carousel-multiple splide">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide">
+                    <div class="card">
+                        <img src="{% static 'assets/img/sample/photo/ev-topics1.jpg' %}" class="card-img-top" alt="image">
+                        <div class="card-body pt-2">
+                            <h4 class="mb-0">Économisez de l'argent avec les véhicules électriques</h4>
+                        </div>
+                    </div>
+                </li>
+                <li class="splide__slide">
+                    <div class="card">
+                        <img src="{% static 'assets/img/sample/photo/ev-topics2.jpg' %}" class="card-img-top" alt="image">
+                        <div class="card-body pt-2">
+                            <h4 class="mb-0">Découvrez le plaisir de conduire électrique</h4>
+                        </div>
+                    </div>
+                </li>
+                <li class="splide__slide">
+                    <div class="card">
+                        <img src="{% static 'assets/img/sample/photo/ev-topics5.jpg' %}" class="card-img-top" alt="image">
+                        <div class="card-body pt-2">
+                            <h4 class="mb-0">Préserver l'environnement avec les véhicules électriques</h4>
+                        </div>
+                    </div>
+                </li>
+                <li class="splide__slide">
+                    <div class="card">
+                        <img src="{% static 'assets/img/sample/photo/ev-topics1.jpg' %}" class="card-img-top" alt="image">
+                        <div class="card-body pt-2">
+                            <h4 class="mb-0">"Les coûts de possession à long terme des véhicules électriques</h4>
+                        </div>
+                    </div>
+                </li>
+                <li class="splide__slide">
+                    <div class="card">
+                        <img src="{% static 'assets/img/sample/photo/ev-topics2.jpg' %}" class="card-img-top" alt="image">
+                        <div class="card-body pt-2">
+                            <h4 class="mb-0">Rechargez facilement avec les véhicules électriques</h4>
+                        </div>
+                    </div>
+                </li>
+                <li class="splide__slide">
+                    <div class="card">
+                        <img src="{% static 'assets/img/sample/photo/ev-topics2.jpg' %}" class="card-img-top" alt="image">
+                        <div class="card-body pt-2">
+                            <h4 class="mb-0">La technologie de pointe des véhicules électriques</h4>
+                        </div>
+                    </div>
+                </li>
+                <li class="splide__slide">
+                    <div class="card">
+                        <img src="{% static 'assets/img/sample/photo/ev-topics5.jpg' %}" class="card-img-top" alt="image">
+                        <div class="card-body pt-2">
+                            <h4 class="mb-0">Le futur de la mobilité</h4>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- * carousel multiple -->
+    <br>
+    
+    <br>
+    <div class="section mt-2">
+        <div class="card text-center">
+            <div class="card-body">
+                <h3 class="card-title">TotalEnergies EV Max</h3>
+                <p class="card-text">A partir Rs 25/KWh</p>
+                <p class="card-text">6x + charge mensuelle</p>
+                <p class="card-text">RS 0 frais de reservation</p>
+                <p class="card-text">Rs600/month</p>
+                <a href="{% url 'register' %}" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="card-footer text-muted">
+                Les tarifs varient en fonction de l'Heure d'Utilisation (HU)
+            </div>
+        </div>
+    </div>
+
+    <div class="section mt-2">
+        <div class="card text-center">
+            <div class="card-header">
+                Popular
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">TotalEnergies EV Plus</h5>
+                <p class="card-text">A partir Rs 25/KWh</p>
+                <p class="card-text">1-5x charge mensuelle</p>
+                <p class="card-text">RS 0 frais de reservation</p>
+                <p class="card-text">Rs400/month</p>
+                <a href="{% url 'register' %}" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="card-footer text-muted">
+                Les tarifs varient en fonction de l'Heure d'Utilisation (HU)
+            </div>
+        </div>
+    </div>
+
+    <div class="section mt-2">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">TotalEnergies EV Basic</h5>
+                <p class="card-text">A partir Rs 25/KWh</p>
+                <p class="card-text">1-2x charge mensuelle</p>
+                <p class="card-text">RS 150 frais de reservation</p>
+                <p class="card-text">Rs250/month</p>
+                <a href="{% url 'register' %}" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="card-footer text-muted">
+                Les tarifs varient en fonction de l'Heure d'Utilisation (HU)
+            </div>
+        </div>
+    </div>
+
+    <div class="section mt-2">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Payer à l'Utilisation.</h5>
+                <p class="card-text">A partir Rs 40/KWh</p>
+                <p class="card-text">Chargement occasionelle</p>
+                <p class="card-text">RS 150 frais de reservation</p>
+                <p class="card-text">Zero Subscription</p>
+                <a href="{% url 'register' %}" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="card-footer text-muted">
+                Les tarifs varient en fonction de l'Heure d'Utilisation (HU)
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="header-large-title">
+        <i>Si vous avez besoin de recharger fréquemment, vous pouvez opter pour un abonnement mensuel avec TotalEnergies, qui vous offre des tarifs préférentiels et d'autres avantages, tels que l'accès à des bornes de recharge exclusives.</i>
+        <i>Quelle que soit l'option que vous choisissez, TotalEnergies s'efforce de vous offrir une flexibilité maximale pour répondre à vos besoins de recharge de véhicule électrique.</i>
+    </div>
+
+</div>
+
+
+{% endblock %}
