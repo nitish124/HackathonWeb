@@ -12,3 +12,7 @@ def client_dashboard(request):
 @login_required(login_url = 'login')
 def loyalty_dashboard(request):
     return render(request, 'client/loyalty_dashboard.html')
+
+@login_required(login_url = 'login')
+def map(request):
+    return render(request, 'client/google-map.html')

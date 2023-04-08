@@ -17,6 +17,19 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/img/sample/photo/TotalEnergies_logo.svg.png' %}">
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     <link rel="manifest" href="{% static '__manifest.json' %}">
+    <style>
+
+        /* Set the size of the div element that will contain the map */
+        
+        #map {
+        
+            height: 470px;
+        
+            width: 100%;
+        
+        }
+        
+    </style>
 </head>
 
 <body>
@@ -52,7 +65,7 @@
                 <ion-icon name="clipboard-outline"></ion-icon>
             </div>
         </a>
-        <a href="ev-borne-search-form.html" class="item">
+        <a href="{% url 'map' %}" class="item">
             <div class="col">
                 <div class="action-button large">
                     <ion-icon name="add-outline"></ion-icon>
@@ -189,6 +202,7 @@
     <script src="{% static 'assets/js/plugins/progressbar-js/progressbar.min.js' %}"></script>
     <!-- Base Js File -->
     <script src="{% static 'assets/js/base.js' %}"></script>
+     <script async defer src=https://maps.googleapis.com/maps/api/js?key=AIzaSyC8DNqvBXctOfyR4bwCLymk8-WDHY-kjXk&callback=initMap></script>
 
     <script>
         // Trigger welcome notification after 5 seconds
@@ -200,6 +214,95 @@
         window.onload = function() {
             console.log(localStorage.getItem("UserName"))
             document.getElementById("welcomeName").innerHTML = localStorage.getItem("UserName");
+        }
+
+        function initMap() {
+
+            const mapElement = document.getElementById("map");
+            const lat = parseFloat(mapElement.getAttribute("data-lat"));
+            const lng = parseFloat(mapElement.getAttribute("data-lng"));
+
+            const myLatLng = { lat: lat, lng: lng };
+
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 10,
+                center: myLatLng,
+            });
+
+
+            // Array of marker locations, titles, and images
+            const locations = [
+                { lat: -20.205259559687725, lng: 57.786455154418945, title: "Ambre Hotel\n Near Restaurant A", imageUrl: "{% static 'assets/img/icon/ElectricChager.png' %}" },
+                { lat: -20.19041740950625, lng: 57.774047346041314, title: "Belle Mare Beach Hotel \n Parking", imageUrl: "{% static 'assets/img/icon/ElectricChager.png' %}" },
+                { lat: -20.18392638162877, lng: 57.72372331689983, title: "Super U \nFlacq", imageUrl: "{% static 'assets/img/icon/ElectricChager.png' %}" },
+                { lat: -20.04964232918784, lng: 57.66242980957031, title: "King Savers \n Goodlands Shopping Mall", imageUrl: "{% static 'assets/img/icon/ElectricChager.png' %}" },
+                { lat: -20.16908895802401, lng: 57.51016616821289, title: "Champ De Mars \n Horse Racing Track packing", imageUrl: "{% static 'assets/img/icon/ElectricChager.png' %}" },
+                { lat: -20.22447376111156, lng: 57.49551790038721, title: "Bagatelle Mall \n Shopping Center Parking N1", imageUrl: "{% static 'assets/img/icon/ElectricChager.png' %}" },
+                { lat: -20.25780254337971, lng: 57.490189121391396, title: "Trianon \n Shopping Center Parking N1", imageUrl: "{% static 'assets/img/icon/ElectricChager.png' %}" },
+                { lat: -20.288704670317905, lng: 57.41037054137211, title: "Cascavelle \n Shopping Center Parking A", imageUrl: "{% static 'assets/img/icon/ElectricChager.png' %}" },
+                { lat: -20.323773486412854, lng: 57.37983141490768, title: "Tamarin \n Spa Boutique", imageUrl: "{% static 'assets/img/icon/ElectricChager.png' %}" },
+                { lat: -20.48007535680609, lng: 57.55393185067872, title: "Riviere des Anguille \n Winners", imageUrl: "{% static 'assets/img/icon/ElectricChager.png' %}" },
+                { lat: -20.305569241715343, lng: 57.68873017801791, title: "Domaine Etoile\n Adventure park", imageUrl: "{% static 'assets/img/icon/ElectricChager.png' %}" },
+                { lat: -20.311780583567423, lng: 57.524647849053395, title: "Garage Curepipe\n Battery Servicing \n Contact: 58182130", imageUrl: "{% static 'assets/img/icon/CarRepair.png' %}" },
+                { lat: -20.062117887192116, lng: 57.568254068795284, title: "Garage Triolet\n Battery Servicing \n Contact: 58192130", imageUrl: "{% static 'assets/img/icon/CarRepair.png' %}" },
+                { lat: -20.17875706585659, lng: 57.664127205607635, title: "Garage Bon Acceuil\n Battery Servicing \n Contact: 58186630", imageUrl: "{% static 'assets/img/icon/CarRepair.png' %}" },
+                { lat: -20.370613401122256, lng: 57.380597184838585, title: "Garage Riviere Noire\n Battery Servicing \n Contact: 58168130", imageUrl: "{% static 'assets/img/icon/CarRepair.png' %}" },
+                { lat: -20.450331277913953, lng: 57.6485420392839, title: "Garage Trois Boutiques\n Battery Servicing \n Contact: 57182130", imageUrl: "{% static 'assets/img/icon/CarRepair.png' %}" },
+                { lat: -20.2911179662319, lng: 57.678949317544934, title: "Garage Sebastopol\n Battery Servicing \n Contact: 58102130", imageUrl: "{% static 'assets/img/icon/CarRepair.png' %}" },
+                { lat: -20.138454050130072, lng: 57.52700775504406, title: "Garage Terre Rouge\n Battery Servicing \n Contact: 57672130", imageUrl: "{% static 'assets/img/icon/CarRepair.png' %}" },
+                { lat: -20.495063632294492, lng: 57.46527947456713, title: "Garage Chemin Grenier\n Battery Servicing \n Contact: 53260130", imageUrl: "{% static 'assets/img/icon/CarRepair.png' %}" },
+            ];
+
+            // Loop through the locations array and add markers to the map
+            locations.forEach((location) => {
+                // Create a marker
+                const marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(location.lat, location.lng),
+                    map: map,
+                    title: location.title,
+                    icon: location.imageUrl
+                });
+
+                // Create an InfoWindow with the multiline title and image
+                const infoWindowContent = `
+            <div>
+            <img src="${location.imageUrl}" alt="Image" width="50" height="50">
+            <p>${location.title.replace("\n", "<br>")}</p>
+            </div>
+            `;
+
+                const infoWindow = new google.maps.InfoWindow({
+                    content: infoWindowContent,
+                });
+
+                // Add mouseover event listener to the marker to display the InfoWindow
+                marker.addListener("mouseover", () => {
+                    infoWindow.open(map, marker);
+                });
+
+                // Add mouseout event listener to the marker to close the InfoWindow
+                marker.addListener("mouseout", () => {
+                    infoWindow.close();
+                });
+            });
+            //Add a click event listener to the map
+            map.addListener("click", (event) => {
+                const clickedLatLng = event.latLng;
+                const lat = clickedLatLng.lat();
+                const lng = clickedLatLng.lng();
+                console.log("Latitude:", lat, "Longitude:", lng);
+                // Create a new marker with the custom image at the clicked location
+                const marker = new google.maps.Marker({
+                    position: { lat: lat, lng: lng },
+                    map: map,
+                    icon: 'assets/img/icon/ElectricChager.png',
+                });
+                // Add a click event listener to the marker
+                marker.addListener("click", () => {
+                    // Remove the marker from the map
+                    marker.setMap(null);
+                });
+            });
         }
         
     </script>

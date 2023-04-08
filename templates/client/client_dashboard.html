@@ -5,7 +5,7 @@
 {% block content %}
 
 <div class="header-large-title">
-    <h1 class="title">Hello, Sarah</h1>
+    <h1 class="title">Bonjour, {{request.user.first_name}}</h1>
 </div>
 
 <div class="section mt-3 mb-3">
@@ -17,7 +17,7 @@
             <p class="card-text">
                 Reusable components designed for the mobile interface and ready to use.
             </p>
-            <a href="google-map.html" class="btn btn-primary">
+            <a href="{% url 'map' %}" class="btn btn-primary">
                 <ion-icon name="Map"></ion-icon>
                 Map
             </a>

@@ -25,11 +25,11 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-DEFAULT_PORT = "8080"
-WEBSITES_PORT=8080
+
+
 # Application definition
 
 INSTALLED_APPS = [
