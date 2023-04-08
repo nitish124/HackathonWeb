@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'hackathon2023'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A3347947503F4435BA8912685FFABCA7 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_29493E1A6EE04A88880514CFB41EAB44 }}
