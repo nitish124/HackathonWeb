@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>TotalEnergies EV platform</title>
+    <meta name="description" content="Electric Mobility platform">
+    <meta name="keywords" content="EV, mobile app, totalenergies, charging_point" />
+    <link rel="icon" type="image/png" href="{% static 'assets/img/sample/photo/TotalEnergies_logo.svg.png' %}" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/img/sample/photo/TotalEnergies_logo.svg.png' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="manifest" href="{% static '__manifest.json' %}">
+</head>
+
+
+<body>
+
+    <!-- loader -->
+    <div id="loader">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader bg-primary text-light">
+        <div class="left">
+            <a href="#" class="headerButton goBack">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle">Map</div>
+        <div class="right"></div>
+    </div>
+    <!-- * App Header -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule" class="full-height">
+        <div class="section mt-3 mb-3">
+            <div class="card">
+                <div id="map" data-lat="-20.23255144034348" data-lng="57.52348545357936" title="St Pierre Kendra Shopping Mall"></div>
+                <div class="card-body">
+                    <h6 class="card-subtitle">Point de recharge le plus proche</h6>
+                    <h5 class="card-title">Selectionner une borne de recharge</h5>
+                    <p class="card-text">
+                        Possibilité de rechercher et de réserver des bornes de recharge disponibles sur la plateforme en fonction de leur emplacement, de leurs besoins de charge, de leurs préférences et de leurs dates de réservation.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section full mt-2">
+            <div id="map" data-lat="-20.23255144034348" data-lng="57.52348545357936"></div>
+
+        </div>
+
+
+
+    </div>
+    <!-- * App Capsule -->
+
+    <!-- App Bottom Menu -->
+    <div class="appBottomMenu">
+        <a href="home.html" class="item active">
+            <div class="col">
+                <ion-icon name="home-outline"></ion-icon>
+            </div>
+        </a>
+        <a href="app-components.html" class="item">
+            <div class="col">
+                <ion-icon name="cube-outline"></ion-icon>
+            </div>
+        </a>
+        <a href="ev-borne-search-form.html" class="item">
+            <div class="col">
+                <div class="action-button large">
+                    <ion-icon name="add-outline"></ion-icon>
+                </div>
+            </div>
+        </a>
+        <a href="app-pages.html" class="item">
+            <div class="col">
+                <ion-icon name="layers-outline"></ion-icon>
+            </div>
+        </a>
+        <a href="#sidebarPanel" class="item" data-bs-toggle="offcanvas">
+            <div class="col">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+        </a>
+    </div>
+    <!-- * App Bottom Menu -->
+
+    <!-- App Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarPanel">
+        <div class="offcanvas-body">
+            <!-- profile box -->
+            <div class="profileBox">
+                <div class="image-wrapper">
+                    <img src="assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged rounded">
+                </div>
+                <div class="in">
+                    <div id="usernameInfo" style="color:white"> </div>
+                    <div class="text-muted">
+                        <ion-icon name="location"></ion-icon>
+                        Maurice
+                    </div>
+                </div>
+                <a href="#" class="close-sidebar-button" data-bs-dismiss="offcanvas">
+                    <ion-icon name="close"></ion-icon>
+                </a>
+            </div>
+            <!-- * profile box -->
+
+            <ul class="listview flush transparent no-line image-listview mt-2">
+                <li>
+                    <a href="home.html" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            Discover
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="page-chat.html" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            <div>Chat</div>
+                            <span class="badge badge-danger">5</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="moon-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            <div>Dark Mode</div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input dark-mode-switch" type="checkbox" id="darkmodesidebar">
+                                <label class="form-check-label" for="darkmodesidebar"></label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- sidebar buttons -->
+        <div class="sidebar-buttons">
+            <a href="#" class="button">
+                <ion-icon name="person-outline"></ion-icon>
+            </a>
+            <a href="#" class="button">
+                <ion-icon name="archive-outline"></ion-icon>
+            </a>
+            <a href="#" class="button">
+                <ion-icon name="settings-outline"></ion-icon>
+            </a>
+            <a href="#" class="button">
+                <ion-icon name="log-out-outline"></ion-icon>
+            </a>
+        </div>
+        <!-- * sidebar buttons -->
+    </div>
+    <!-- * App Sidebar -->
+
+    <!-- ============== Js Files ==============  -->
+    <script>
+        function initMap() {
+        
+        const mapElement = document.getElementById("map");
+const lat = parseFloat(mapElement.getAttribute("data-lat"));
+const lng = parseFloat(mapElement.getAttribute("data-lng"));
+
+const myLatLng = { lat: lat, lng: lng };
+
+const map = new google.maps.Map(document.getElementById("map"), {
+zoom: 10,
+center: myLatLng,
+});
+
+
+  // Array of marker locations, titles, and images
+  const locations = [
+    { lat: -20.205259559687725, lng: 57.786455154418945, title: "Ambre Hotel\n Near Restaurant A", imageUrl: "assets/img/icon/ElectricChager.png" },
+    { lat: -20.19041740950625, lng: 57.774047346041314, title: "Belle Mare Beach Hotel \n Parking", imageUrl: "assets/img/icon/ElectricChager.png" },
+    { lat: -20.18392638162877, lng: 57.72372331689983, title: "Super U \nFlacq", imageUrl: "assets/img/icon/ElectricChager.png" },
+    { lat: -20.04964232918784, lng: 57.66242980957031, title: "King Savers \n Goodlands Shopping Mall", imageUrl: "assets/img/icon/ElectricChager.png" },
+    { lat: -20.16908895802401, lng: 57.51016616821289, title: "Champ De Mars \n Horse Racing Track packing", imageUrl: "assets/img/icon/ElectricChager.png" },
+    { lat: -20.22447376111156, lng: 57.49551790038721, title: "Bagatelle Mall \n Shopping Center Parking N1", imageUrl: "assets/img/icon/ElectricChager.png" },
+    { lat: -20.25780254337971, lng: 57.490189121391396, title: "Trianon \n Shopping Center Parking N1", imageUrl: "assets/img/icon/ElectricChager.png" },
+    { lat: -20.288704670317905, lng: 57.41037054137211, title: "Cascavelle \n Shopping Center Parking A", imageUrl: "assets/img/icon/ElectricChager.png" },
+    { lat: -20.323773486412854, lng: 57.37983141490768, title: "Tamarin \n Spa Boutique", imageUrl: "assets/img/icon/ElectricChager.png" },
+    { lat: -20.48007535680609, lng: 57.55393185067872, title: "Riviere des Anguille \n Winners", imageUrl: "assets/img/icon/ElectricChager.png" },
+    { lat: -20.305569241715343, lng: 57.68873017801791, title: "Domaine Etoile\n Adventure park", imageUrl: "assets/img/icon/ElectricChager.png" },
+    { lat: -20.311780583567423, lng: 57.524647849053395, title: "Garage Curepipe\n Battery Servicing \n Contact: 58182130", imageUrl: "assets/img/icon/CarRepair.png" },
+    { lat: -20.062117887192116, lng: 57.568254068795284, title: "Garage Triolet\n Battery Servicing \n Contact: 58192130", imageUrl: "assets/img/icon/CarRepair.png" },
+    { lat: -20.17875706585659, lng: 57.664127205607635, title: "Garage Bon Acceuil\n Battery Servicing \n Contact: 58186630", imageUrl: "assets/img/icon/CarRepair.png" },
+    { lat: -20.370613401122256, lng: 57.380597184838585, title: "Garage Riviere Noire\n Battery Servicing \n Contact: 58168130", imageUrl: "assets/img/icon/CarRepair.png" },
+    { lat: -20.450331277913953, lng: 57.6485420392839, title: "Garage Trois Boutiques\n Battery Servicing \n Contact: 57182130", imageUrl: "assets/img/icon/CarRepair.png" },
+    { lat: -20.2911179662319, lng: 57.678949317544934, title: "Garage Sebastopol\n Battery Servicing \n Contact: 58102130", imageUrl: "assets/img/icon/CarRepair.png" },
+    { lat: -20.138454050130072, lng: 57.52700775504406, title: "Garage Terre Rouge\n Battery Servicing \n Contact: 57672130", imageUrl: "assets/img/icon/CarRepair.png" },
+    { lat: -20.495063632294492, lng: 57.46527947456713, title: "Garage Chemin Grenier\n Battery Servicing \n Contact: 53260130", imageUrl: "assets/img/icon/CarRepair.png" },
+  ];
+
+  // Loop through the locations array and add markers to the map
+  locations.forEach((location) => {
+    // Create a marker
+    const marker = new google.maps.Marker({
+      position: new google.maps.LatLng(location.lat, location.lng),
+      map: map,
+      title: location.title,
+      icon: location.imageUrl
+    });
+
+    // Create an InfoWindow with the multiline title and image
+    const infoWindowContent = `
+      <div>
+        <img src="${location.imageUrl}" alt="Image" width="50" height="50">
+        <p>${location.title.replace("\n", "<br>")}</p>
+      </div>
+    `;
+
+    const infoWindow = new google.maps.InfoWindow({
+      content: infoWindowContent,
+    });
+
+    // Add mouseover event listener to the marker to display the InfoWindow
+    marker.addListener("mouseover", () => {
+      infoWindow.open(map, marker);
+    });
+
+    // Add mouseout event listener to the marker to close the InfoWindow
+    marker.addListener("mouseout", () => {
+      infoWindow.close();
+    });
+  });
+//Add a click event listener to the map
+map.addListener("click", (event) => {
+const clickedLatLng = event.latLng;
+const lat = clickedLatLng.lat();
+const lng = clickedLatLng.lng();
+console.log("Latitude:", lat, "Longitude:", lng);
+// Create a new marker with the custom image at the clicked location
+const marker = new google.maps.Marker({
+position: { lat: lat, lng: lng },
+map: map,
+icon: 'assets/img/icon/ElectricChager.png',
+});
+            // Add a click event listener to the marker
+marker.addListener("click", () => {
+// Remove the marker from the map
+marker.setMap(null);
+});
+});
+
+
+}
+window.onload = function() {
+            console.log(localStorage.getItem("UserName"))
+            document.getElementById("usernameInfo").innerHTML = localStorage.getItem("UserName");
+        }
+        </script>
+    
+    <!-- ============== Js Files ==============  -->
+    <!-- Bootstrap -->
+    <script src="{% static 'assets/js/lib/bootstrap.min.js' %}"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="{% static 'assets/js/plugins/splide/splide.min.js' %}"></script>
+    <!-- ProgressBar js -->
+    <script src="{% static 'assets/js/plugins/progressbar-js/progressbar.min.js' %}"></script>
+    <!-- Base Js File -->
+    <script src="{% static 'assets/js/base.js' %}"></script>
+
+
+</body>
+
+</html>

@@ -28,7 +28,7 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-
+DEFAULT_PORT = "8080"
 
 # Application definition
 
