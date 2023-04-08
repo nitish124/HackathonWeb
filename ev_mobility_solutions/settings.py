@@ -29,7 +29,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 DEFAULT_PORT = "8080"
-
+WEBSITES_PORT=8080
 # Application definition
 
 INSTALLED_APPS = [
